@@ -8,9 +8,21 @@ import time
 # Streamlit app configuration
 st.set_page_config(page_title="Monte Carlo π Approximation", layout="centered")
 
-# Title of the app
+# Title and Introduction
 st.title("Monte Carlo π Approximation")
-st.write("This app uses a Monte Carlo method to approximate π by randomly sampling points within a unit square.")
+st.write("""
+This app uses the **Monte Carlo method** to approximate the value of π. 
+The method works by randomly sampling points in a square and calculating 
+the ratio of points that fall inside a unit circle to the total number of points.
+""")
+
+# Explanation with LaTeX
+st.subheader("How it Works:")
+st.write("We randomly generate points \\((x, y)\\) in a square of side length 2, centered at the origin. We check if each point lies inside the unit circle by testing the condition:")
+st.latex(r"x^2 + y^2 \leq 1")
+st.write("The ratio of points inside the circle to the total number of points is used to approximate π:")
+st.latex(r"\pi \approx 4 \cdot \frac{\text{Number of points inside the circle}}{\text{Total number of points}}")
+st.write("As the number of points increases, the approximation becomes more accurate.")
 
 # Streamlit elements
 placeholder = st.empty()
