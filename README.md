@@ -13,12 +13,7 @@ Carlo method. The algorithm randomly samples points in a square and estimates
    at the origin.
 2. Check if each point lies inside the unit circle using the condition: $x^2 +
    y^2 \leq 1$.
-3. Approximate π using the formula
-   
-   $$\pi \approx 4 \times \frac{N_{\text{inside}}}{N_{\text{total}}}$$   
-   
-   where $N_{\text{inside}}$ is the number of points inside the circle, and
-   $N_{\text{total}}$ is the total number of points.
+3. Approximate π using the formula $\pi \approx 4 \times \frac{N_{\text{inside}}}{N_{\text{total}}}$, where $N_{\text{inside}}$ is the number of points inside the circle, and $N_{\text{total}}$ is the total number of points.
 
 ## Features
 
