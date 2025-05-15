@@ -16,8 +16,8 @@ of points that fall inside a unit circle.
 2. Check if each point lies inside the unit circle using the condition: $x^2 +
    y^2 \leq 1$.
 
-3. Approximate π using the formula $\pi \approx \frac{4n}{T}$, where $n$ is the
-   number of points inside the circle, and $T$ is the total number of points.
+3. Approximate $\pi$ using the formula $\pi \approx \frac{4n}{T}$, where $n$ is
+   the number of points inside the circle, and $T$ is the total number of points.
 
 ## Features
 
