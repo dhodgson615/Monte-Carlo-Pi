@@ -48,7 +48,6 @@ Run `streamlit run streamlit_app.py` to launch the interactive web app.
 
 - `local_monte.py` — Local visualization using Matplotlib
 - `streamlit_app.py` — Interactive web app using Streamlit
-- `README.md` — Project documentation
 
 ## License
 
