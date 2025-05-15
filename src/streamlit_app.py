@@ -2,6 +2,8 @@ import random
 
 import matplotlib.pyplot as plt
 import streamlit as st
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 from matplotlib.patches import Circle
 
 
@@ -29,8 +31,17 @@ def show_intro() -> None:
     st.write("More points = better approximation.")
 
 
-def plot_points(x_in, y_in, x_out, y_out, pi_approx, total) -> plt.Figure:
+def plot_points(
+    x_in: list[float],
+    y_in: list[float],
+    x_out: list[float],
+    y_out: list[float],
+    pi_approx: float,
+    total: int,
+) -> plt.Figure:
     """Plots the points and the current approximation of π."""
+    fig: Figure
+    ax: Axes
     fig, ax = plt.subplots(figsize=(5, 5))
     ax.set_aspect("equal")
     ax.set_xlim(-1, 1)
@@ -46,7 +57,7 @@ def plot_points(x_in, y_in, x_out, y_out, pi_approx, total) -> plt.Figure:
 def main() -> None:
     """Main function to run the Monte Carlo simulation."""
     show_intro()
-    num_points = 10_000
+    num_points: int = 10_000
 
     # Initialize session state for simulation data
     if "inside" not in st.session_state:
@@ -72,7 +83,10 @@ def main() -> None:
 
         # Generate num_points with a progress bar
         progress = st.progress(0)
+        i: int
         for i in range(num_points):
+            x: float
+            y: float
             x, y = random.uniform(-1, 1), random.uniform(-1, 1)
             st.session_state.total += 1
 
@@ -91,8 +105,8 @@ def main() -> None:
 
     # Display the current plot if we have points
     if st.session_state.total > 0:
-        pi_approx = 4 * st.session_state.inside / st.session_state.total
-        fig = plot_points(
+        pi_approx: float = 4 * st.session_state.inside / st.session_state.total
+        fig: Figure = plot_points(
             st.session_state.x_in,
             st.session_state.y_in,
             st.session_state.x_out,
