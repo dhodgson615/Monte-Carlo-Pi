@@ -30,8 +30,9 @@ of points that fall inside a unit circle.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/dhodgson615/Monte-Carlo-Pi cd
-Monte-Carlo-Pi pip install -r requirements.txt
+git clone https://github.com/dhodgson615/Monte-Carlo-Pi
+cd Monte-Carlo-Pi
+pip install -r requirements.txt
 ```
 
 ## Running Locally
