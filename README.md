@@ -1,4 +1,4 @@
-# Monte Carlo π Approximation
+# Monte Carlo $\pi$ Approximation
 
 [Live Demo on
 Streamlit](https://monte-carlo-pi-efxp3lntxpzv8g8wm6ejbv.streamlit.app)
