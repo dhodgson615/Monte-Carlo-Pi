@@ -120,7 +120,7 @@ def main() -> None:
         if st.session_state.simulation_complete:
             st.text_area(
                 "Final Result",
-                f"π approximation: {pi_approx:.6f}",
+                f"π approximation: {pi_approx:.4f}",
                 height=70,
                 disabled=True,
             )
