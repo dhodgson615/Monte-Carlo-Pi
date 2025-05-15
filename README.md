@@ -3,9 +3,10 @@
 [Live Demo on
 Streamlit](https://monte-carlo-pi-efxp3lntxpzv8g8wm6ejbv.streamlit.app)
 
-This project demonstrates how to approximate the value of π using the Monte
-Carlo method. The algorithm randomly samples points in a square and estimates π
-based on the proportion of points that fall inside a unit circle.
+This project demonstrates how to approximate the value of π using the [Monte
+Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method). The algorithm
+randomly samples points in a square and estimates $\pi$ based on the proportion
+of points that fall inside a unit circle.
 
 ## How It Works
 
