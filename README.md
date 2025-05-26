@@ -3,7 +3,7 @@
 [Live Demo on
 Streamlit](https://monte-carlo-pi-efxp3lntxpzv8g8wm6ejbv.streamlit.app)
 
-This project demonstrates how to approximate the value of π using the [Monte
+This project demonstrates how to approximate the value of $\pi$ using the [Monte
 Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method). The algorithm
 randomly samples points in a square and estimates $\pi$ based on the proportion
 of points that fall inside a unit circle.
@@ -22,7 +22,9 @@ of points that fall inside a unit circle.
 ## Features
 
 - Interactive visualization of the Monte Carlo process
+
 - Streamlit web app for instant browser-based exploration
+
 - Local Matplotlib animation for desktop use
 
 ## Installation
@@ -37,16 +39,16 @@ pip install -r requirements.txt
 
 ## Running Locally
 
-**Matplotlib Animation:**  Run `python3 local_monte.py` to see the process in a
+**Matplotlib Animation:** Run `python3 local_monte.py` to see the process in a
 desktop window.
 
-**Streamlit Web App:**  Run `streamlit run streamlit_app.py` to launch the
+**Streamlit Web App:** Run `streamlit run streamlit_app.py` to launch the
 interactive web app.
 
 ## Project Structure
 
-- `local_monte.py` — Local visualization using Matplotlib
-- `streamlit_app.py` — Interactive web app using Streamlit
+- `local_monte.py` - Local visualization using Matplotlib
+- `streamlit_app.py` - Interactive web app using Streamlit
 
 ## License
 
