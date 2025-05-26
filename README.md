@@ -49,9 +49,3 @@ interactive web app.
 
 - `local_monte.py` - Local visualization using Matplotlib
 - `streamlit_app.py` - Interactive web app using Streamlit
-
-## License
-
-This project is licensed under the MIT License.
-
-
