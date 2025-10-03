@@ -83,6 +83,7 @@ def monte_carlo_pi() -> None:
             inside += 1
             x_in.append(x)
             y_in.append(y)
+
         else:
             x_out.append(x)
             y_out.append(y)
