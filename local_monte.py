@@ -64,6 +64,7 @@ def update_plot(
     ax.set_title(
         f"Monte Carlo π Approximation\nπ ≈ {pi_approx:.6f} (Samples: {total})"
     )
+
     ax.legend(loc="upper right")
     plt.pause(0.01)
 
