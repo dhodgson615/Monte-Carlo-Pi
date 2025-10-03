@@ -60,6 +60,7 @@ def update_plot(
     ax.add_patch(circle)
     ax.scatter(x_in, y_in, color="green", s=1, label="Inside Circle")
     ax.scatter(x_out, y_out, color="red", s=1, label="Outside Circle")
+
     ax.set_title(
         f"Monte Carlo π Approximation\nπ ≈ {pi_approx:.6f} (Samples: {total})"
     )
