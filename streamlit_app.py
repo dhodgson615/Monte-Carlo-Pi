@@ -20,8 +20,10 @@ def show_intro() -> None:
         "sampling points and calculating what fraction fall inside a unit "
         "circle."
     )
-    st.subheader("How it Works:")
-    st.write(
+
+    subheader("How it Works:")
+
+    write(
         "We randomly place points in a square and check if they're in the "
         "circle:"
     )
