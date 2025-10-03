@@ -83,9 +83,10 @@ def main() -> None:
             s.total += 1
 
             if x**2 + y**2 <= 1:
-                st.session_state.inside += 1
-                st.session_state.x_in.append(x)
-                st.session_state.y_in.append(y)
+                s.inside += 1
+                s.x_in.append(x)
+                s.y_in.append(y)
+
             else:
                 st.session_state.x_out.append(x)
                 st.session_state.y_out.append(y)
