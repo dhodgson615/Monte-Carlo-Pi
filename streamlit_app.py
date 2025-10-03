@@ -46,7 +46,7 @@ def plot_points(
     y_out: list[float],
     pi_approx: float,
     total: int,
-) -> plt.Figure:
+) -> Figure:
     """Plots the points and the current approximation of π."""
     fig: Figure
     ax: Axes
