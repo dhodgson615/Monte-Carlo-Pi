@@ -70,17 +70,12 @@ def main() -> None:
         s.x_in, s.y_in, s.x_out, s.y_out = [], [], [], []
         s.simulation_complete = False
 
-    # Button to start or rerun simulation
-    button_label = "Run Simulation" if st.session_state.total == 0 else "Rerun"
-    if st.button(button_label, key="run_button"):
-        # Reset state
-        st.session_state.inside = 0
-        st.session_state.total = 0
-        st.session_state.x_in = []
-        st.session_state.y_in = []
-        st.session_state.x_out = []
-        st.session_state.y_out = []
-        st.session_state.simulation_complete = False
+    button_label = "Run Simulation" if s.total == 0 else "Rerun"
+
+    if button(button_label, key="run_button"):
+        s.inside, s.total = 0, 0
+        s.x_in, s.y_in, s.x_out, s.y_out = [], [], [], []
+        s.simulation_complete = False
 
         # Generate num_points with a progress bar
         progress = st.progress(0)
