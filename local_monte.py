@@ -32,10 +32,8 @@ def print_intro() -> None:
 
 def setup_plot() -> tuple[Figure, Axes, Circle]:
     """Sets up the initial plot for the Monte Carlo simulation."""
-    plt.ion()
-    fig: Figure
-    ax: Axes
-    fig, ax = plt.subplots(figsize=(6, 6))
+    ion()
+    fig, ax = subplots(figsize=(6, 6))
     ax.set_aspect("equal")
     ax.set_xlim(-1, 1)
     ax.set_ylim(-1, 1)
