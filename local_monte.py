@@ -74,6 +74,7 @@ def monte_carlo_pi() -> None:
     inside, total = 0, 0
     x_in, y_in, x_out, y_out = [], [], [], []
     fig, ax, circle = setup_plot()
+
     while True:
         x: float
         y: float
