@@ -1,8 +1,5 @@
 from random import uniform
 
-import matplotlib.pyplot as plt
-import streamlit as st
-from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.patches import Circle
 
