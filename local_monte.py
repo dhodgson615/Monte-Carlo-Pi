@@ -71,15 +71,8 @@ def update_plot(
 
 def monte_carlo_pi() -> None:
     """Runs the Monte Carlo simulation to approximate π."""
-    inside: int = 0
-    total: int = 0
-    y_out: list[float] = []
-    x_in: list[float] = []
-    y_in: list[float] = []
-    x_out: list[float] = []
-    fig: Figure
-    ax: Axes
-    circle: Circle
+    inside, total = 0, 0
+    x_in, y_in, x_out, y_out = [], [], [], []
     fig, ax, circle = setup_plot()
     while True:
         x: float
