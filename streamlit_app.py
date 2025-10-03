@@ -1,4 +1,4 @@
-import random
+from random import uniform
 
 import matplotlib.pyplot as plt
 import streamlit as st
