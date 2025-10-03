@@ -13,8 +13,9 @@ def show_intro() -> None:
     """Displays the introduction and explanation of the Monte Carlo π
     approximation.
     """
-    st.title("Monte Carlo π Approximation")
-    st.write(
+    title("Monte Carlo π Approximation")
+
+    write(
         "This app uses the Monte Carlo method to approximate π by randomly "
         "sampling points and calculating what fraction fall inside a unit "
         "circle."
