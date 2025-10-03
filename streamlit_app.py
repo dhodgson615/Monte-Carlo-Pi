@@ -93,7 +93,7 @@ def main() -> None:
 
             p.progress((i + 1) / num_points)
 
-        st.session_state.simulation_complete = True
+        s.simulation_complete = True
 
     # Display the current plot if we have points
     if st.session_state.total > 0:
