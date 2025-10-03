@@ -63,7 +63,7 @@ def plot_points(
 def main() -> None:
     """Main function to run the Monte Carlo simulation."""
     show_intro()
-    num_points: int = 10_000
+    num_points = 10_000
 
     if "inside" not in s:
         s.inside, s.total = 0, 0
