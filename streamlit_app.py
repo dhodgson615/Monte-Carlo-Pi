@@ -2,6 +2,11 @@ from random import uniform
 
 from matplotlib.figure import Figure
 from matplotlib.patches import Circle
+from matplotlib.pyplot import subplots
+from streamlit import (button, latex, progress, pyplot, session_state,
+                       subheader, text_area, title, write)
+
+s = session_state
 
 
 def show_intro() -> None:
