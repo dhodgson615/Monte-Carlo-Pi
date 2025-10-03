@@ -91,8 +91,7 @@ def main() -> None:
                 s.x_out.append(x)
                 s.y_out.append(y)
 
-            # Update progress bar
-            progress.progress((i + 1) / num_points)
+            p.progress((i + 1) / num_points)
 
         st.session_state.simulation_complete = True
 
