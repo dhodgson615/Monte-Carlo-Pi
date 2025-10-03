@@ -1,6 +1,5 @@
 import random
 import time
-from typing import Any
 
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
