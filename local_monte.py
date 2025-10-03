@@ -25,8 +25,7 @@ def print_intro() -> None:
         "1. Generate random points in a 2×2 square centered at origin"
         "\n"
         "2. Count points where x² + y² ≤ 1 (inside the unit circle)"
-    )
-    print(
+        "\n"
         "3. Calculate: π ≈ 4 × (points inside) ÷ (total points)"
     )
 
