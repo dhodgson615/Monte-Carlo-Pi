@@ -108,9 +108,10 @@ def main() -> None:
             s.total,
         )
 
-        # Show final approximation in text box if simulation is complete
-        if st.session_state.simulation_complete:
-            st.text_area(
+        pyplot(fig)
+
+        if s.simulation_complete:
+            text_area(
                 "Final Result",
                 f"π approximation: {pi_approx:.4f}",
                 height=70,
