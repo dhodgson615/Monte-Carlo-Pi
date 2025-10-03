@@ -87,7 +87,8 @@ def monte_carlo_pi() -> None:
         else:
             x_out.append(x)
             y_out.append(y)
-        pi_approx: float = 4 * inside / total
+
+        pi_approx = 4 * inside / total
         update_plot(ax, circle, x_in, y_in, x_out, y_out, pi_approx, total)
         time.sleep(0.01)
 
