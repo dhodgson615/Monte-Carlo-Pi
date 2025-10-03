@@ -79,10 +79,8 @@ def main() -> None:
         p = progress(0)
 
         for i in range(num_points):
-            x: float
-            y: float
-            x, y = random.uniform(-1, 1), random.uniform(-1, 1)
-            st.session_state.total += 1
+            x, y = uniform(-1, 1), uniform(-1, 1)
+            s.total += 1
 
             if x**2 + y**2 <= 1:
                 st.session_state.inside += 1
