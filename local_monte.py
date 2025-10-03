@@ -1,5 +1,5 @@
-import random
-import time
+from random import uniform
+from time import sleep
 
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
