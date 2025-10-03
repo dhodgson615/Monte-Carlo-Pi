@@ -78,9 +78,6 @@ def main() -> None:
         s.simulation_complete = False
         p = progress(0)
 
-        # Generate num_points with a progress bar
-        progress = st.progress(0)
-        i: int
         for i in range(num_points):
             x: float
             y: float
