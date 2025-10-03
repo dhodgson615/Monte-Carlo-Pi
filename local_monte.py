@@ -12,9 +12,9 @@ def print_intro() -> None:
     approximation.
     """
     print(
-        "Monte Carlo π Approximation\n"
-    )
-    print(
+        "Monte Carlo π Approximation"
+        "\n"
+        "\n"
         "This program approximates π using the Monte Carlo method by sampling"
     )
     print(
