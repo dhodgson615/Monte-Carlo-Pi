@@ -35,7 +35,8 @@ def show_intro() -> None:
         r"\pi \approx 4 \cdot \frac{\text{Points inside circle}}"
         r"{\text{Total points}}"
     )
-    st.write("More points = better approximation.")
+
+    write("More points = better approximation.")
 
 
 def plot_points(
