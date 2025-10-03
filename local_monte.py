@@ -66,7 +66,7 @@ def update_plot(
     )
 
     ax.legend(loc="upper right")
-    plt.pause(0.01)
+    pause(0.01)
 
 
 def monte_carlo_pi() -> None:
