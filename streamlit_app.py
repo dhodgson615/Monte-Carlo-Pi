@@ -105,7 +105,7 @@ def main() -> None:
             s.x_out,
             s.y_out,
             pi_approx,
-            st.session_state.total,
+            s.total,
         )
         st.pyplot(fig)
 
