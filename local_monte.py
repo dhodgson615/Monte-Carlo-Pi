@@ -16,11 +16,10 @@ def print_intro() -> None:
         "\n"
         "\n"
         "This program approximates π using the Monte Carlo method by sampling"
-    )
-    print(
-        "random points and finding what fraction fall inside a unit circle.\n"
-    )
-    print(
+        "\n"
+        "random points and finding what fraction fall inside a unit circle."
+        "\n"
+        "\n"
         "How it Works:"
     )
     print(
