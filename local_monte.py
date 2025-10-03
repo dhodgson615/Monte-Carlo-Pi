@@ -75,7 +75,7 @@ def monte_carlo_pi() -> None:
     fig, ax, circle = setup_plot()
 
     while True:
-        x, y = random.uniform(-1, 1), random.uniform(-1, 1)
+        x, y = uniform(-1, 1), uniform(-1, 1)
         total += 1
 
         if x**2 + y**2 <= 1:
