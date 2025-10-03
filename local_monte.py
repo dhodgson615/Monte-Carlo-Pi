@@ -37,7 +37,7 @@ def setup_plot() -> tuple[Figure, Axes, Circle]:
     ax.set_aspect("equal")
     ax.set_xlim(-1, 1)
     ax.set_ylim(-1, 1)
-    circle: Circle = Circle((0, 0), 1, color="lightblue", fill=False)
+    circle = Circle((0, 0), 1, color="lightblue", fill=False)
     ax.add_patch(circle)
     return fig, ax, circle
 
