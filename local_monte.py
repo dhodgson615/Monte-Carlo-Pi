@@ -1,7 +1,6 @@
 import random
 import time
 
-import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.patches import Circle
