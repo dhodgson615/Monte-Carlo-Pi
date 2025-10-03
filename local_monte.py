@@ -78,6 +78,7 @@ def monte_carlo_pi() -> None:
     while True:
         x, y = random.uniform(-1, 1), random.uniform(-1, 1)
         total += 1
+
         if x**2 + y**2 <= 1:
             inside += 1
             x_in.append(x)
