@@ -88,8 +88,8 @@ def main() -> None:
                 s.y_in.append(y)
 
             else:
-                st.session_state.x_out.append(x)
-                st.session_state.y_out.append(y)
+                s.x_out.append(x)
+                s.y_out.append(y)
 
             # Update progress bar
             progress.progress((i + 1) / num_points)
