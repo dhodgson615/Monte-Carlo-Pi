@@ -21,8 +21,7 @@ def print_intro() -> None:
         "\n"
         "\n"
         "How it Works:"
-    )
-    print(
+        "\n"
         "1. Generate random points in a 2×2 square centered at origin"
     )
     print(
