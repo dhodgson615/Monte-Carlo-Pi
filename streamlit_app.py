@@ -48,9 +48,7 @@ def plot_points(
     total: int,
 ) -> Figure:
     """Plots the points and the current approximation of π."""
-    fig: Figure
-    ax: Axes
-    fig, ax = plt.subplots(figsize=(5, 5))
+    fig, ax = subplots(figsize=(5, 5))
     ax.set_aspect("equal")
     ax.set_xlim(-1, 1)
     ax.set_ylim(-1, 1)
