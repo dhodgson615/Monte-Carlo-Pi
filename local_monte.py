@@ -4,6 +4,7 @@ import time
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.patches import Circle
+from matplotlib.pyplot import ion, pause, subplots
 
 
 def print_intro() -> None:
