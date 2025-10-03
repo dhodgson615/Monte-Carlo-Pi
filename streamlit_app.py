@@ -96,13 +96,14 @@ def main() -> None:
         s.simulation_complete = True
 
     # Display the current plot if we have points
-    if st.session_state.total > 0:
-        pi_approx: float = 4 * st.session_state.inside / st.session_state.total
-        fig: Figure = plot_points(
-            st.session_state.x_in,
-            st.session_state.y_in,
-            st.session_state.x_out,
-            st.session_state.y_out,
+    if s.total > 0:
+        pi_approx = 4 * s.inside / s.total
+
+        fig = plot_points(
+            s.x_in,
+            s.y_in,
+            s.x_out,
+            s.y_out,
             pi_approx,
             st.session_state.total,
         )
