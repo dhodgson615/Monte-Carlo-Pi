@@ -27,9 +27,11 @@ def show_intro() -> None:
         "We randomly place points in a square and check if they're in the "
         "circle:"
     )
-    st.latex(r"x^2 + y^2 \leq 1")
-    st.write("Then we calculate π using:")
-    st.latex(
+
+    latex(r"x^2 + y^2 \leq 1")
+    write("Then we calculate π using:")
+
+    latex(
         r"\pi \approx 4 \cdot \frac{\text{Points inside circle}}"
         r"{\text{Total points}}"
     )
