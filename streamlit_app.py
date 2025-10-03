@@ -65,15 +65,10 @@ def main() -> None:
     show_intro()
     num_points: int = 10_000
 
-    # Initialize session state for simulation data
-    if "inside" not in st.session_state:
-        st.session_state.inside = 0
-        st.session_state.total = 0
-        st.session_state.x_in = []
-        st.session_state.y_in = []
-        st.session_state.x_out = []
-        st.session_state.y_out = []
-        st.session_state.simulation_complete = False
+    if "inside" not in s:
+        s.inside, s.total = 0, 0
+        s.x_in, s.y_in, s.x_out, s.y_out = [], [], [], []
+        s.simulation_complete = False
 
     # Button to start or rerun simulation
     button_label = "Run Simulation" if st.session_state.total == 0 else "Rerun"
