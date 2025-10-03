@@ -76,6 +76,7 @@ def main() -> None:
         s.inside, s.total = 0, 0
         s.x_in, s.y_in, s.x_out, s.y_out = [], [], [], []
         s.simulation_complete = False
+        p = progress(0)
 
         # Generate num_points with a progress bar
         progress = st.progress(0)
