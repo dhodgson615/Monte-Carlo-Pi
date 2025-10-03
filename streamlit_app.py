@@ -107,7 +107,6 @@ def main() -> None:
             pi_approx,
             s.total,
         )
-        st.pyplot(fig)
 
         # Show final approximation in text box if simulation is complete
         if st.session_state.simulation_complete:
