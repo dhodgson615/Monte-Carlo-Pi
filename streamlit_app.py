@@ -95,7 +95,6 @@ def main() -> None:
 
         s.simulation_complete = True
 
-    # Display the current plot if we have points
     if s.total > 0:
         pi_approx = 4 * s.inside / s.total
 
