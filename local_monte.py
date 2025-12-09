@@ -33,13 +33,13 @@ def print_intro() -> None:
 def setup_plot() -> tuple[Figure, Axes, Circle]:
     """Sets up the initial plot for the Monte Carlo simulation."""
     ion()
-    fig, ax = subplots(figsize=(6, 6))
-    ax.set_aspect("equal")
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(-1, 1)
+    figure, axes = subplots(figsize=(6, 6))
+    axes.set_aspect("equal")
+    axes.set_xlim(-1, 1)
+    axes.set_ylim(-1, 1)
     circle = Circle((0, 0), 1, color="lightblue", fill=False)
-    ax.add_patch(circle)
-    return fig, ax, circle
+    axes.add_patch(circle)
+    return figure, axes, circle
 
 
 def monte_carlo_pi(batch: int = 1000, redraw_every: int = 1) -> None:
@@ -48,11 +48,15 @@ def monte_carlo_pi(batch: int = 1000, redraw_every: int = 1) -> None:
     """
     inside, total = 0, 0
     x_in, y_in, x_out, y_out = [], [], [], []
-    fig, ax, circle = setup_plot()
-    scatter_in = ax.scatter([], [], color="green", s=1, label="Inside Circle")
-    scatter_out = ax.scatter([], [], color="red", s=1, label="Outside Circle")
-    title = ax.set_title("Monte Carlo π Approximation\nπ ≈ 0.0 (Samples: 0)")
-    ax.legend(loc="upper right")
+    figure, axes, circle = setup_plot()
+    scatter_in = axes.scatter(
+        [], [], color="green", s=1, label="Inside Circle"
+    )
+    scatter_out = axes.scatter(
+        [], [], color="red", s=1, label="Outside Circle"
+    )
+    title = axes.set_title("Monte Carlo π Approximation\nπ ≈ 0.0 (Samples: 0)")
+    axes.legend(loc="upper right")
     batch_count = 0
     t0 = time()
 
@@ -100,11 +104,12 @@ def monte_carlo_pi(batch: int = 1000, redraw_every: int = 1) -> None:
                     f"(Samples: {total})"
                 )
 
-                fig.canvas.draw_idle()
+                figure.canvas.draw_idle()
                 pause(0.001)
 
     except KeyboardInterrupt:
         elapsed = time() - t0
+
         print(
             f"\nStopped after {total} samples, π ≈ "
             f"{4.0 * inside / total:.6f}, {total/elapsed:.0f} samples/s"
