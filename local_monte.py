@@ -1,10 +1,11 @@
-from random import uniform
-from time import sleep
+from time import time
 
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.patches import Circle
 from matplotlib.pyplot import ion, pause, subplots
+from numpy import column_stack, empty
+from numpy.random import uniform
 
 
 def print_intro() -> None:
@@ -41,57 +42,75 @@ def setup_plot() -> tuple[Figure, Axes, Circle]:
     return fig, ax, circle
 
 
-def update_plot(
-    ax: Axes,
-    circle: Circle,
-    x_in: list[float],
-    y_in: list[float],
-    x_out: list[float],
-    y_out: list[float],
-    pi_approx: float,
-    total: int,
-) -> None:
-    """Updates the plot with the current points and π approximation."""
-    ax.clear()
-    ax.set_aspect("equal")
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(-1, 1)
-    ax.add_patch(circle)
-    ax.scatter(x_in, y_in, color="green", s=1, label="Inside Circle")
-    ax.scatter(x_out, y_out, color="red", s=1, label="Outside Circle")
-
-    ax.set_title(
-        f"Monte Carlo π Approximation\nπ ≈ {pi_approx:.6f} (Samples: {total})"
-    )
-
-    ax.legend(loc="upper right")
-    pause(0.01)
-
-
-def monte_carlo_pi() -> None:
-    """Runs the Monte Carlo simulation to approximate π."""
+def monte_carlo_pi(batch: int = 1000, redraw_every: int = 1) -> None:
+    """Approximates π using the Monte Carlo method with real-time
+    plotting.
+    """
     inside, total = 0, 0
     x_in, y_in, x_out, y_out = [], [], [], []
     fig, ax, circle = setup_plot()
+    scatter_in = ax.scatter([], [], color="green", s=1, label="Inside Circle")
+    scatter_out = ax.scatter([], [], color="red", s=1, label="Outside Circle")
+    title = ax.set_title("Monte Carlo π Approximation\nπ ≈ 0.0 (Samples: 0)")
+    ax.legend(loc="upper right")
+    batch_count = 0
+    t0 = time()
 
-    while True:
-        x, y = uniform(-1, 1), uniform(-1, 1)
-        total += 1
+    try:
+        while True:
+            x, y = uniform(-1.0, 1.0, size=batch), uniform(
+                -1.0, 1.0, size=batch
+            )
 
-        if x**2 + y**2 <= 1:
-            inside += 1
-            x_in.append(x)
-            y_in.append(y)
+            mask = (x * x + y * y) <= 1.0
+            n_in = int(mask.sum())
+            inside += n_in
+            total += batch
 
-        else:
-            x_out.append(x)
-            y_out.append(y)
+            if n_in:
+                xi = x[mask].tolist()
+                yi = y[mask].tolist()
+                x_in.extend(xi)
+                y_in.extend(yi)
 
-        pi_approx = 4 * inside / total
-        update_plot(ax, circle, x_in, y_in, x_out, y_out, pi_approx, total)
-        sleep(0.01)
+            n_out = batch - n_in
+
+            if n_out:
+                xo = x[~mask].tolist()
+                yo = y[~mask].tolist()
+                x_out.extend(xo)
+                y_out.extend(yo)
+
+            batch_count += 1
+
+            if batch_count >= redraw_every:
+                batch_count = 0
+                pi_approx = 4.0 * inside / total
+
+                scatter_in.set_offsets(
+                    column_stack((x_in, y_in)) if x_in else empty((0, 2))
+                )
+
+                scatter_out.set_offsets(
+                    column_stack((x_out, y_out)) if x_out else empty((0, 2))
+                )
+
+                title.set_text(
+                    f"Monte Carlo π Approximation\nπ ≈ {pi_approx:.6f} "
+                    f"(Samples: {total})"
+                )
+
+                fig.canvas.draw_idle()
+                pause(0.001)
+
+    except KeyboardInterrupt:
+        elapsed = time() - t0
+        print(
+            f"\nStopped after {total} samples, π ≈ "
+            f"{4.0 * inside / total:.6f}, {total/elapsed:.0f} samples/s"
+        )
 
 
 if __name__ == "__main__":
     print_intro()
-    monte_carlo_pi()
+    monte_carlo_pi(batch=2000, redraw_every=1)
